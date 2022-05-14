@@ -18,6 +18,7 @@ const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
   title,
   src,
   showHeader = true,
+  licenseKey
 }) => {
   const lightGallery = useRef<any>(null);
 
@@ -59,6 +60,7 @@ const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
         controls={false}
         download={false}
         zoom={true}
+        // licenseKey="YOUR_KEY_HERE"
         mobileSettings={{
           showCloseIcon: true,
         }}
@@ -66,6 +68,7 @@ const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
         onAfterClose={() => {
           lightGallery.current.refresh();
         }}
+        {...(licenseKey && { licenseKey })}
       >
         <a href={src} className="ion-photo-viewer-img">
           {children}

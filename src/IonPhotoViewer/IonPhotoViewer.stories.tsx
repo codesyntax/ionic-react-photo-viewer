@@ -25,6 +25,7 @@ export const IonAvatarItemExample = () => (
         <IonPhotoViewer
           title="Martin arrantzalea"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alcedo_Atthis.jpg/1280px-Alcedo_Atthis.jpg"
+          licenseKey='your-license-key'
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alcedo_Atthis.jpg/1280px-Alcedo_Atthis.jpg"
@@ -50,6 +51,7 @@ export const IonAvatarItemExample = () => (
         <IonPhotoViewer
           title="Martin arrantzalea"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alcedo_Atthis.jpg/1280px-Alcedo_Atthis.jpg"
+          licenseKey='your-license-key'
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alcedo_Atthis.jpg/1280px-Alcedo_Atthis.jpg"
