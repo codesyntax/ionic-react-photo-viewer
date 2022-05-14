@@ -1,0 +1,35 @@
+{
+    "name": "ionic-react-photo-viewer",
+    "version": "1.0.0",
+    "description": "Ionic React photo viewer component",
+    "main": "index.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "ionic",
+        "react",
+        "photo",
+        "viewer",
+        "component"
+    ],
+    "author": "bipoza",
+    "license": "ISC",
+    "dependencies": {
+        "lightgallery": "^2.4.0"
+    },
+    "devDependencies": {
+        "@ionic/react": "^6.1.5",
+        "@types/react": "^18.0.9",
+        "@types/react-dom": "^18.0.4",
+        "react": "^18.1.0",
+        "react-router-dom": "^6.3.0",
+        "typescript": "^4.6.4"
+    },
+    "peerDependencies": {
+        "@ionic/react": "^6.1.5",
+        "react": "^18.1.0",
+        "react-router-dom": "^6.3.0"
+    }
+}
