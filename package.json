@@ -42,8 +42,9 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "babel-loader": "^8.2.5",
+    "postcss": "^8.4.13",
     "react": "^18.1.0",
-    "react-router-dom": "^6.3.0",
+    "react-dom": "^18.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.73.0",
     "rollup-plugin-dts": "^4.2.1",
@@ -55,6 +56,6 @@
   "peerDependencies": {
     "@ionic/react": "^6.1.5",
     "react": "^18.1.0",
-    "react-router-dom": "^6.3.0"
+    "react-dom": "^18.1.0"
   }
 }
