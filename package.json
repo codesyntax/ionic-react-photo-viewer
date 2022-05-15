@@ -10,12 +10,14 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "homepage": "http://codesyntax.github.io/ionic-react-photo-viewer",
   "scripts": {
     "build": "npm run clean && rollup -c",
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static && rimraf storybook-static",
     "release": "release-it"
   },
   "keywords": [
@@ -43,6 +45,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "babel-loader": "^8.2.5",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.13",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
