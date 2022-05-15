@@ -9,6 +9,8 @@ The features:
 * Blurred background support ([Available for Chrome and Safari](https://caniuse.com/css-backdrop-filter)).
 * IonHeader integration to adapt it to the native design.
 
+![IonPhotoViewer demo](./docs/ion-photo-viewer-demo.gif)
+
 
 ## Installation
 ```bash
@@ -18,7 +20,7 @@ npm install --save @codesyntax/ionic-react-photo-viewer
 ## Use example
 ```tsx
 // import component
-import { IonPhotoViewer } from '@codesyntax/ionic-react-photo-viewer';
+import IonPhotoViewer from '@codesyntax/ionic-react-photo-viewer';
 
 // TSX
 <IonItem button lines="none" detail={false}>
