@@ -1,7 +1,9 @@
 {
-  "name": "ionic-react-photo-viewer",
+  "name": "@codesyntax/ionic-react-photo-viewer",
   "version": "1.0.0",
   "description": "Ionic React photo viewer component",
+  "author": "bipoza",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -22,8 +24,6 @@
     "viewer",
     "component"
   ],
-  "author": "bipoza",
-  "license": "ISC",
   "dependencies": {
     "lightgallery": "^2.4.0"
   },
