@@ -9,6 +9,8 @@ The features:
 * Blurred background support ([Available for Chrome and Safari](https://caniuse.com/css-backdrop-filter)).
 * IonHeader integration to adapt it to the native design.
 
+![IonPhotoViewer demo](./docs/ion-photo-viewer-demo.gif)
+
 
 ## Installation
 ```bash
