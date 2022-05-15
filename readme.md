@@ -18,7 +18,7 @@ npm install --save @codesyntax/ionic-react-photo-viewer
 ## Use example
 ```tsx
 // import component
-import { IonPhotoViewer } from '@codesyntax/ionic-react-photo-viewer';
+import IonPhotoViewer from '@codesyntax/ionic-react-photo-viewer';
 
 // TSX
 <IonItem button lines="none" detail={false}>
