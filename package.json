@@ -1,6 +1,6 @@
 {
   "name": "@codesyntax/ionic-react-photo-viewer",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Ionic React photo viewer component",
   "author": "bipoza",
   "license": "MIT",
@@ -28,7 +28,8 @@
     "component"
   ],
   "dependencies": {
-    "lightgallery": "^2.4.0"
+    "lightgallery": "^2.4.0",
+    "release-it": "^15.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
