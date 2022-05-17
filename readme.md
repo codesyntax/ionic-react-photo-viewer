@@ -1,5 +1,6 @@
 # Ionic React Photo Viewer
 
+## [DEMO](https://codesyntax.github.io/ionic-react-photo-viewer/?path=/story/example-ionphotoviewer--ion-avatar-item-example)
 A react component for displaying images adapted to Ionic design.
 
 The features:
