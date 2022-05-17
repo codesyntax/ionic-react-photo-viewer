@@ -1,6 +1,6 @@
 {
   "name": "@codesyntax/ionic-react-photo-viewer",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Ionic React photo viewer component",
   "author": "bipoza",
   "license": "MIT",
@@ -59,8 +59,8 @@
   },
   "peerDependencies": {
     "@ionic/react": "^6.1.5",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6"
   },
   "publishConfig": {
     "access": "public"
