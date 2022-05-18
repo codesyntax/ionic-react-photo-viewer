@@ -3,5 +3,4 @@ export interface IonPhotoViewerProps {
     title: string;
     src: string;
     showHeader?: boolean;
-    licenseKey?: string;
 }
