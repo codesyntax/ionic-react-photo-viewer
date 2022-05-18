@@ -1,50 +1,25 @@
-import React from 'react';
-import LightGallery from 'lightgallery/react';
-
-// import styles
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import lgZoom from 'lightgallery/plugins/zoom';
-
-import './IonPhotoViewer.css';
-import { useCallback, useRef } from 'react';
-import { renderIonHeader } from './utils';
-import { IonPhotoViewerProps } from './IonPhotoViewer.types';
-
-
+import React, {useEffect} from "react";
+import "photoswipe/dist/photoswipe.css";
+import "./IonPhotoViewer.css";
+import { getImageDimensions, renderIonHeader } from "./utils";
+import { IonPhotoViewerProps } from "./IonPhotoViewer.types";
+import { Gallery, Item } from "react-photoswipe-gallery";
 
 const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
   children,
   title,
   src,
   showHeader = true,
-  licenseKey
 }) => {
-  const lightGallery = useRef<any>(null);
+  const [dimensions, setImageDimensions] = React.useState({
+    height: 0,
+    width: 0,
+  });
 
-  const onInit = useCallback(
-    (detail: any) => {
-      if (detail) {
-        const instance = detail.instance;
-        lightGallery.current = instance;
-        // lightGallery.current.openGallery();
 
-        if (showHeader) {
-          renderIonHeader(title, instance);
-          // closeIonPhotoViewer(instance);
-        }
-        // instance.refresh();
-      }
-    },
-    [showHeader, title],
-  );
-
-  // useEffect(() => {
-  //   if (lightGallery.current) {
-  //     lightGallery.current.refresh();
-  //   }
-  // }, [src]);
-
+  useEffect(() => {
+    getImageDimensions(src).then((dimensions:any) =>  setImageDimensions(dimensions));
+  }, []);
   return (
     <div
       className="ion-photo-viewer"
@@ -52,28 +27,23 @@ const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
       onKeyDown={(e) => e.stopPropagation()}
       role="presentation"
     >
-      <LightGallery
-        onInit={onInit}
-        speed={500}
-        plugins={[lgZoom]}
-        counter={false}
-        controls={false}
-        download={false}
-        zoom={true}
-        // licenseKey="YOUR_KEY_HERE"
-        mobileSettings={{
-          showCloseIcon: true,
-        }}
-        getCaptionFromTitleOrAlt={false}
-        onAfterClose={() => {
-          lightGallery.current.refresh();
-        }}
-        {...(licenseKey && { licenseKey })}
-      >
-        <a href={src} className="ion-photo-viewer-img">
-          {children}
-        </a>
-      </LightGallery>
+      <Gallery>
+        <Item
+          original={src}
+          thumbnail={src}
+          width={dimensions.width}
+          height={dimensions.height}
+        >
+          {({ ref, open }) => (
+            <div
+              onClick={open}
+              ref={ref as React.MutableRefObject<HTMLImageElement>}
+            >
+              {children}
+            </div>
+          )}
+        </Item>
+      </Gallery>
     </div>
   );
 };
