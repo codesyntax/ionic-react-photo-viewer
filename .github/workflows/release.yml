@@ -1,3 +1,5 @@
+name: Release a new version
+
 on:
   pull_request:
     branches:
@@ -21,9 +23,6 @@ jobs:
       - run: npm install release-it
       - run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > .npmrc
       - run: npm run release -- minor --ci
-      # Deploy storybook to Github pages
-      # - name: Deploy Storybook
-      #   - run: npm run deploy-storybook
         env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
