@@ -12,13 +12,12 @@ import {
   
   const renderIonHeaderToString = (
     title: string,
-    ionPhotoViewerCloseId: string,
   ) => {
     return renderToString(
       <IonHeader class="header-no-shadow">
         <IonToolbar>
           <IonButtons slot="start">
-            <IonButton id={ionPhotoViewerCloseId}>
+            <IonButton id="ion-header-close-button">
               <IonIcon slot="icon-only" icon={arrowBack} />
             </IonButton>
           </IonButtons>
