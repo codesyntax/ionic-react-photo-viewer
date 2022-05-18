@@ -20,7 +20,7 @@ const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
 
   const uiElements: GalleryProps['uiElements'] = [
     {
-      name: 'bulletsIndicator',
+      name: 'IonHeaderComponent',
       order: 9,
       isButton: false,
       appendTo: 'wrapper',

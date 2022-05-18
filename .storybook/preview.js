@@ -53,5 +53,5 @@ export const parameters = {
       ...INITIAL_VIEWPORTS,
     },
     defaultViewport: "iphonex",
-  }
+  },
 };
