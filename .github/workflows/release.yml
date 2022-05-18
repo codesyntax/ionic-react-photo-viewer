@@ -22,7 +22,25 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > .npmrc
       - run: npm run release -- minor --ci
       # Deploy storybook to Github pages
-      - run: npm run deploy-storybook
+      # - name: Deploy Storybook
+      #   - run: npm run deploy-storybook
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
+
+  build-and-deploy-sb:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run deploy-storybook
+
+      - name: Deploy
+        with:
+          branch: gh-pages
+          folder: storybook-static # output folder from `npm run build-storybook`
