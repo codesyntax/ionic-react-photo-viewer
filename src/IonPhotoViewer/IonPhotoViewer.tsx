@@ -4,7 +4,8 @@ import "./IonPhotoViewer.css";
 import { createElementFromHTML, getImageDimensions } from "./utils";
 import { IonPhotoViewerProps } from "./IonPhotoViewer.types";
 import { Gallery, GalleryProps, Item } from "react-photoswipe-gallery";
-import renderIonHeaderToString from "./renderIonHeaderToString";
+import IonHeaderComponent from "./IonHeaderComponent";
+import { renderToString } from "react-dom/server";
 
 const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
   children,
@@ -22,27 +23,15 @@ const IonPhotoViewer: React.FC<IonPhotoViewerProps> = ({
       name: 'bulletsIndicator',
       order: 9,
       isButton: false,
-
       appendTo: 'wrapper',
       onInit: (el, pswpInstance) => {
         if(showHeader){
-          el.style.top = '0'
-          el.style.gridTemplateColumns = 'repeat(auto-fit, 40px)'
-          el.style.gridTemplateRows = 'repeat(auto-fit, 40px)'
-          el.style.justifyContent = 'left'
-          el.append(createElementFromHTML(renderIonHeaderToString(title)));
+          el.style.top = '0';
+          el.style.gridTemplateColumns = 'repeat(auto-fit, 40px)';
+          el.style.gridTemplateRows = 'repeat(auto-fit, 40px)';
+          el.style.justifyContent = 'left';
+          el.append(createElementFromHTML(renderToString(<IonHeaderComponent title={title} />)));
         }
-
-        pswpInstance.on('verticalDrag', (e) => {
-          console.log('change: ', e);
-   
-          // when e.panY if more than 230, ion-header tag stype start opacity
-          if(e.panY > 230){
-            el.style.opacity = `${(e.panY - 230) / 230}`
-          }else{
-            el.style.opacity = '1'
-          }
-        })
       },
       onClick: (e, el, pswpInstance) => {
         const target = e.target as HTMLImageElement | HTMLDivElement
