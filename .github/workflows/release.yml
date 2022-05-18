@@ -18,11 +18,19 @@ jobs:
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      # Update package.json version
+      - run: npm version minor
+      - run: git add *
+      - run: git commit -m "package.json version incremented"
+      - run: git push
+
       - run: npm install # --legacy-peer-deps
       - run: npm run build
       - run: npm install release-it
       - run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > .npmrc
       - run: npm run release -- minor --ci
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
