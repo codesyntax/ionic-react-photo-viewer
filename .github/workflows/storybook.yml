@@ -1,18 +1,16 @@
 name: Build & deploy
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
+    types: [closed]
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    
+    if: github.event.pull_request.merged == true
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
