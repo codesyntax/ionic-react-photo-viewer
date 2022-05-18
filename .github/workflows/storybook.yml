@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build & Deploy Storybook
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
@@ -25,28 +25,10 @@ jobs:
     
     - name: Build project
       run: npm run build-storybook
-
-    - name: Upload production-ready build files
-      uses: actions/upload-artifact@v2
-      with:
-        name: production-files
-        path: ./storybook-static
   
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: production-files
-        path: ./storybook-static
-
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./storybook-static
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
+        
