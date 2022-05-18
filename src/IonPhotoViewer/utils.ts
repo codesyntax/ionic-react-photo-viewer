@@ -18,4 +18,23 @@ const renderIonHeader = (title: string, instance: any) => {
     });
 };
 
-export { renderIonHeader };
+const getImageDimensions = (imageUrl: string) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = imageUrl;
+
+    img.onload = () => {
+      resolve({
+        height: img.height,
+        width: img.width,
+      });
+    };
+    img.onerror = (err) => {
+      console.log("img error");
+      console.error(err);
+      reject(err);
+    };
+  });
+};
+
+export { renderIonHeader, getImageDimensions };

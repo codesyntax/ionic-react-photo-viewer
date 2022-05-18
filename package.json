@@ -28,8 +28,8 @@
     "component"
   ],
   "dependencies": {
-    "lightgallery": "^2.4.0",
-    "release-it": "^15.0.0"
+    "photoswipe": "^5.2.7",
+    "react-photoswipe-gallery": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -56,7 +56,8 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "release-it": "^15.0.0"
   },
   "peerDependencies": {
     "@ionic/react": "^6.1.5",
