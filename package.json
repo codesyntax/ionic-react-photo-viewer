@@ -24,8 +24,11 @@
     "ionic",
     "react",
     "photo",
+    "image",
     "viewer",
-    "component"
+    "component",
+    "photoswipe",
+    "react-photoswipe-gallery"
   ],
   "dependencies": {
     "photoswipe": "^5.2.7",
