@@ -1,6 +1,6 @@
 {
   "name": "@codesyntax/ionic-react-photo-viewer",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "Ionic React photo viewer component",
   "author": "bipoza",
   "license": "MIT",
@@ -55,7 +55,7 @@
     "postcss": "^8.4.13",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "release-it": "^15.0.0",
+    "release-it": "^15.10.3",
     "rimraf": "^3.0.2",
     "rollup": "^2.73.0",
     "rollup-plugin-dts": "^4.2.1",
